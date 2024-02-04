@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <title>travio</title>
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=d41d8cd98f00b204e9800998ecf8427e">
+    <link rel="manifest" href="manifest.json?h=d0defb2741aeb5d99020f9d7a992fa74" crossorigin="use-credentials">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&amp;subset=latin-ext&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/style.compiled.css?h=21da29ef93fd1f81566f49313d27f085">
+</head>
+
+<body class="webkit-fill sticky-header space-small">
+    <div class="body">
+        <header>
+            <section>
+                <nav class="navbar navbar-expand bg-body shadow-lg">
+                    <div class="container gap-4"><a class="navbar-brand link-success m-0" href="_portal.html"><svg viewBox="984.788 937.361 253.118 73.419" height="25" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 1005.575 988.458 C 1005.575 992.144 1005.472 998.288 1011.104 998.288 C 1013.869 998.288 1015.61 997.161 1017.555 995.728 L 1017.555 1008.22 C 1015.2 1009.552 1012.333 1010.78 1009.261 1010.78 C 996.256 1010.78 990.42 1005.251 990.42 988.458 L 990.42 971.869 L 984.788 971.869 L 984.788 959.377 L 990.42 959.377 L 990.42 944.836 L 1005.575 944.836 L 1005.575 959.377 L 1017.555 959.377 L 1017.555 971.869 L 1005.575 971.869 L 1005.575 988.458 Z M 1060.296 960.093 L 1058.248 971.46 C 1054.46 969.821 1053.743 970.128 1052.002 970.128 C 1045.858 970.128 1042.274 973.405 1042.274 981.495 L 1042.274 1009.961 L 1027.119 1009.961 L 1027.119 959.377 L 1042.274 959.377 L 1042.274 963.882 C 1044.22 960.401 1049.544 958.66 1052.924 958.66 C 1056.098 958.66 1057.941 958.762 1060.296 960.093 Z M 1073.951 974.327 L 1062.687 967.876 C 1068.319 961.527 1075.897 958.557 1083.781 958.557 C 1098.936 958.557 1105.08 966.852 1105.08 974.634 L 1105.08 1009.961 L 1089.925 1009.961 L 1089.925 1006.377 C 1087.57 1008.835 1083.372 1010.678 1078.661 1010.678 C 1064.838 1010.678 1059.513 1004.534 1059.513 995.113 C 1059.513 984.464 1068.114 977.296 1082.04 977.296 L 1089.925 977.296 C 1089.925 973.507 1087.058 971.05 1082.757 971.05 C 1078.354 971.05 1076.204 971.869 1073.951 974.327 Z M 1089.925 993.27 L 1089.925 988.765 L 1081.016 988.765 C 1077.023 988.765 1074.053 991.53 1074.668 995.421 C 1075.077 998.185 1077.535 999.312 1081.016 999.312 C 1087.672 999.312 1089.925 995.523 1089.925 993.27 Z M 1139.424 1009.961 L 1129.492 1009.961 L 1108.091 959.377 L 1123.757 959.377 L 1134.407 988.253 C 1137.888 979.447 1141.78 967.876 1145.056 959.377 L 1160.621 959.377 L 1139.424 1009.961 Z M 1178.786 959.377 L 1178.786 1009.961 L 1163.631 1009.961 L 1163.631 959.377 L 1178.786 959.377 Z M 1179.196 944.836 C 1179.196 949.137 1175.714 952.516 1171.106 952.516 C 1166.703 952.516 1163.119 949.137 1163.119 944.836 C 1163.119 940.638 1166.703 937.361 1171.106 937.361 C 1175.714 937.361 1179.196 940.638 1179.196 944.836 Z M 1211.18 971.152 C 1204.934 971.152 1199.711 976.682 1199.711 984.771 C 1199.711 992.758 1204.934 998.288 1211.18 998.288 C 1217.528 998.288 1222.751 992.758 1222.751 984.771 C 1222.751 976.682 1217.528 971.152 1211.18 971.152 Z M 1211.18 958.66 C 1226.028 958.66 1237.906 969.821 1237.906 984.771 C 1237.906 999.721 1226.028 1010.78 1211.18 1010.78 C 1196.434 1010.78 1184.556 999.721 1184.556 984.771 C 1184.556 969.821 1196.434 958.66 1211.18 958.66 Z" fill="currentColor"/>
+</svg></a>
+                        <div class="collapse navbar-collapse" id="navcol-1">
+                            <div class="row flex-grow-1 justify-content-end align-items-center">
+                                <div class="col-auto d-none d-lg-block me-auto">
+                                    <ul class="navbar-nav text-uppercase fw-semibold">
+                                        <li class="nav-item"><a class="nav-link active" href="_portal.html">Aktywności</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="_portal-discover.html">Odkrywaj</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="_portal-activities.html">Moje trasy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="d-flex align-items-center gap-3"><a class="btn btn-warning btn-sm d-none d-sm-block rounded-pill" role="button" href="_portal-import.html">Zaimportuj trasę</a><button class="btn btn-sm link-body-emphasis d-none d-sm-block p-0 rounded-0 position-relative pe-3" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-bell fs--xxlarge">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path>
+                                                <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
+                                            </svg><span class="badge bg-danger fw-bold text-white position-absolute top-0 end-0 translate-middle-y">2</span></button>
+                                        <div class="dropdown d-none d-sm-block"><a class="dropdown-toggle d-flex justify-content-center align-items-center btn btn-sm p-0 gap-1" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                                                <div class="ratio w--40 rounded-circle overflow-hidden border border-dark"><img class="img-fluid" alt="grayscale photo of man" src="assets/img/_samples/photo-1522075469751-3a6694fb2f61.jpg?h=de1a5555076e82ff43410e0e14a02773"></div>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="_portal-account.html">Moje konto</a><a class="dropdown-item" href="_portal-settings.html">Ustawienia</a>
+                                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#!" data-bs-target="#modal_logout" data-bs-toggle="modal">Wyloguj</a>
+                                            </div>
+                                        </div><button class="btn d-block d-lg-none rounded-0 p-0" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-menu-2 fs--xxlarge">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M4 6l16 0"></path>
+                                                <path d="M4 12l16 0"></path>
+                                                <path d="M4 18l16 0"></path>
+                                            </svg></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main>
+            <section class="py-5">
+                <div class="container">
+                    <div class="row gx-0 gy-5 flex-column">
+                        <div class="col">
+                            <h1 class="border-secondary-subtle mb-0 pb-3 border-bottom">Zaimportuj trasę</h1>
+                        </div>
+                        <div class="col">
+                            <div class="row gy-5">
+                                <div class="col-12 col-lg-8">
+                                    <div class="card shadow-sm card-bar card-bar-info">
+                                        <div class="card-body p-3 p-sm-4">
+                                            <div class="row gx-0 gy-4 flex-column">
+                                                <div class="col">
+                                                    <h3>Zaimportuj plik GPX</h3>
+                                                    <p class="mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                                </div>
+                                                <div class="col">
+                                                    <form>
+                                                        <div class="row gx-0 gy-4 flex-column">
+                                                            <div class="col">
+                                                                <div class="form-floating"><input class="form-control" type="text" id="form_input_1"><label class="form-label" for="form_input_1">Nazwa trasy</label></div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="input-group"><span class="d-none d-sm-grid input-group-text">Plik GPX</span><input class="form-control" type="file"></div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-floating"><textarea class="form-control" rows="4"></textarea><label class="form-label">Krótki opis</label></div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="d-flex justify-content-start"><a class="btn btn-primary" role="button" href="#!">Import</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div>
+        <div class="modal fade modal-bar modal-bar-warning modal-confirm" role="dialog" tabindex="-1" id="modal_logout" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <h5 class="ff--body">Logout?</h5>
+                        <p class="mb-0">Are you sure you want to logout?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-group" role="group"><a class="btn link-danger" role="button" href="index.html">Log out</a><button class="btn" type="button" data-bs-target="#modal_logout" data-bs-toggle="modal">Cancel</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js?h=f56d3e84f8f4fb156548d390a8a85d8e"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js?h=e55bde7d6e36ebf17ba0b8c1e80e4065"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="assets/js/libs/core/jquery.fancybox.js?h=b63c7cca1b5e4bd57bd854c444b895c9"></script>
+    <script src="assets/js/libs/core/flickity.pkgd.min.js?h=8625a9d2a4f797e756dbd299c2d74fc2"></script>
+    <script src="assets/js/libs/core/masonry.pkgd.js?h=c39480835cf00844e6407f24d8aaba2e"></script>
+    <script src="assets/js/bootstrap/triggers/tooltip.js?h=e5075143aa50a1419d3ea6207a6c1527"></script>
+    <script src="assets/js/bootstrap/triggers/toast.js?h=e07263fb4f941bfa587963c59c9b4251"></script>
+    <script src="assets/js/bootstrap/triggers/popover.js?h=3459a77be6da343bd1d4b48a1f24e510"></script>
+    <script src="assets/js/libs/triggers/flickity.js?h=4f2bd3dd70788aeb4da168eca3bda175"></script>
+    <script src="assets/js/libs/triggers/masonry.js?h=eba9bf4e2d9c7c9794b7bf1e788e5932"></script>
+</body>
+
+</html>
