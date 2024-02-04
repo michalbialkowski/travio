@@ -7900,7 +7900,7 @@ textarea.form-control-lg {
 }
 
 .position-relative, .card .card-header-navbar,
-.card .card-footer-navbar, .card .card-body.card-body-scrollable > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child, body.webkit-fill, .bg--image {
+.card .card-footer-navbar, .card .card-body.card-body-scrollable > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child, body.webkit-fill > .body > main, body.webkit-fill > .body > header, body.webkit-fill, .bg--image {
   position: relative !important;
 }
 
@@ -9841,11 +9841,11 @@ textarea.form-control-lg {
   z-index: 0 !important;
 }
 
-.z-1 {
+.z-1, body.webkit-fill > .body > main {
   z-index: 1 !important;
 }
 
-.z-2 {
+.z-2, body.webkit-fill > .body > header {
   z-index: 2 !important;
 }
 
