@@ -7742,7 +7742,7 @@ textarea.form-control-lg {
   overflow: auto !important;
 }
 
-.overflow-hidden, .modal.modal-bar .modal-content, .card.card-bar, .layout-fullscreen > .row {
+.overflow-hidden, .modal.modal-bar .modal-content, .card.card-bar, .layout-fullscreen > .row, body.webkit-fill {
   overflow: hidden !important;
 }
 
@@ -7751,7 +7751,7 @@ textarea.form-control-lg {
   overflow: visible !important;
 }
 
-.overflow-scroll, .card .card-body.card-body-scrollable > div > div, body.webkit-fill main {
+.overflow-scroll, .card .card-body.card-body-scrollable > div > div, body.webkit-fill > .body > main {
   overflow: scroll !important;
 }
 
@@ -7827,7 +7827,7 @@ textarea.form-control-lg {
 .card .card-footer-navbar > .row > .col .dropup,
 .card .card-footer-navbar > .row > .col .dropstart,
 .card .card-footer-navbar > .row > .col .dropend, .card .card-header-navbar > .row > .col,
-.card .card-footer-navbar > .row > .col, .card .card-body.card-body-scrollable, .btn-square, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child {
+.card .card-footer-navbar > .row > .col, .card .card-body.card-body-scrollable, .btn-square, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child, body.webkit-fill > .body {
   display: flex !important;
 }
 
@@ -7900,15 +7900,15 @@ textarea.form-control-lg {
 }
 
 .position-relative, .card .card-header-navbar,
-.card .card-footer-navbar, .card .card-body.card-body-scrollable > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child, body.sticky-header main, body.sticky-header, .bg--image {
+.card .card-footer-navbar, .card .card-body.card-body-scrollable > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child, body.webkit-fill, .bg--image {
   position: relative !important;
 }
 
-.position-absolute, .card .card-body.card-body-scrollable > div > div, .btn-floated, .btn.btn-nw, .btn.btn-ne, .btn.btn-sw, .btn.btn-se, .bg--image > .bg--image--background {
+.position-absolute, .card .card-body.card-body-scrollable > div > div, .btn-floated, .btn.btn-nw, .btn.btn-ne, .btn.btn-sw, .btn.btn-se, body.webkit-fill > .body, .bg--image > .bg--image--background {
   position: absolute !important;
 }
 
-.position-fixed, body.sticky-header header {
+.position-fixed {
   position: fixed !important;
 }
 
@@ -7916,7 +7916,7 @@ textarea.form-control-lg {
   position: sticky !important;
 }
 
-.top-0, .btn-floated.btn-floated-ne, .btn-floated.btn-floated-nw, .btn.btn-ne, .btn.btn-nw, body.sticky-header header, .bg--image > .bg--image--background {
+.top-0, .btn-floated.btn-floated-ne, .btn-floated.btn-floated-nw, .btn.btn-ne, .btn.btn-nw, body.webkit-fill > .body, .bg--image > .bg--image--background {
   top: 0 !important;
 }
 
@@ -7940,7 +7940,7 @@ textarea.form-control-lg {
   bottom: 100% !important;
 }
 
-.start-0, .btn-floated.btn-floated-sw, .btn-floated.btn-floated-nw, .btn.btn-sw, .btn.btn-nw, .bg--image > .bg--image--background {
+.start-0, .btn-floated.btn-floated-sw, .btn-floated.btn-floated-nw, .btn.btn-sw, .btn.btn-nw, body.webkit-fill > .body, .bg--image > .bg--image--background {
   left: 0 !important;
 }
 
@@ -8156,7 +8156,7 @@ textarea.form-control-lg {
   width: 75% !important;
 }
 
-.w-100, .modal.modal-confirm .modal-footer > .btn-group, .card .card-body.card-body-scrollable > div > div, body.sticky-header header, .bg--image > .bg--image--background {
+.w-100, .modal.modal-confirm .modal-footer > .btn-group, .card .card-body.card-body-scrollable > div > div, body.webkit-fill > .body, .bg--image > .bg--image--background {
   width: 100% !important;
 }
 
@@ -8188,7 +8188,7 @@ textarea.form-control-lg {
   height: 75% !important;
 }
 
-.h-100, .card .card-body.card-body-scrollable > div > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div > div:last-child > .card, .bg--image > .bg--image--background {
+.h-100, .card .card-body.card-body-scrollable > div > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div > div:last-child > .card, body.webkit-fill > .body, .bg--image > .bg--image--background {
   height: 100% !important;
 }
 
@@ -8216,7 +8216,7 @@ textarea.form-control-lg {
   flex-direction: row !important;
 }
 
-.flex-column, .card.card-pill > .card-body > .row > .col:first-child, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child, .layout-fullscreen.layout-fullscreen-sidebar > .row {
+.flex-column, .card.card-pill > .card-body > .row > .col:first-child, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child, .layout-fullscreen.layout-fullscreen-sidebar > .row, body.webkit-fill > .body {
   flex-direction: column !important;
 }
 
@@ -8228,7 +8228,7 @@ textarea.form-control-lg {
   flex-direction: column-reverse !important;
 }
 
-.flex-grow-0 {
+.flex-grow-0, body.webkit-fill > .body > header {
   flex-grow: 0 !important;
 }
 
@@ -8240,7 +8240,7 @@ textarea.form-control-lg {
 .card .card-footer-navbar > .row > .col .dropup,
 .card .card-footer-navbar > .row > .col .dropstart,
 .card .card-footer-navbar > .row > .col .dropend, .card .card-header-navbar > .row > .col .btn,
-.card .card-footer-navbar > .row > .col .btn, .card .card-body.card-body-scrollable > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child > .map-container {
+.card .card-footer-navbar > .row > .col .btn, .card .card-body.card-body-scrollable > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:last-child > div, .layout-fullscreen.layout-fullscreen-sidebar > .row > .col:first-child > .map-container, body.webkit-fill > .body > main {
   flex-grow: 1 !important;
 }
 
@@ -9841,7 +9841,7 @@ textarea.form-control-lg {
   z-index: 0 !important;
 }
 
-.z-1, body.sticky-header main {
+.z-1 {
   z-index: 1 !important;
 }
 
@@ -9849,7 +9849,7 @@ textarea.form-control-lg {
   z-index: 2 !important;
 }
 
-.z-3, body.sticky-header header {
+.z-3 {
   z-index: 3 !important;
 }
 
@@ -20542,7 +20542,7 @@ body.compensate-for-scrollbar {
   max-width: 65px !important;
 }
 
-.h--65, body.space-small > .body > header .navbar {
+.h--65, body.sticky-header.space-small > .body header .navbar {
   height: 65px !important;
 }
 
@@ -20566,7 +20566,7 @@ body.compensate-for-scrollbar {
   padding-right: 65px !important;
 }
 
-.pt--65, body.space-small > .body,
+.pt--65,
 .py--65,
 .p--65 {
   padding-top: 65px !important;
@@ -20950,7 +20950,7 @@ body.compensate-for-scrollbar {
   max-width: 80px !important;
 }
 
-.h--80, body.space-standard > .body > header .navbar {
+.h--80, body.sticky-header.space-standard > .body header .navbar {
   height: 80px !important;
 }
 
@@ -20974,7 +20974,7 @@ body.compensate-for-scrollbar {
   padding-right: 80px !important;
 }
 
-.pt--80, body.space-standard > .body,
+.pt--80,
 .py--80,
 .p--80 {
   padding-top: 80px !important;
@@ -25908,26 +25908,9 @@ body.compensate-for-scrollbar {
 }
 
 body.webkit-fill {
-  min-height: -webkit-fill-available;
-  height: -webkit-fill-available;
-  max-height: -webkit-fill-available;
-  overflow: hidden;
-}
-body.webkit-fill main {
-  min-height: -webkit-fill-available;
-  height: -webkit-fill-available;
+  height: 100vh;
   max-height: -webkit-fill-available;
 }
-body.webkit-vh *.vh--100 {
-  height: -webkit-fill-available !important;
-}
-body.webkit-vh *.minvh--100 {
-  min-height: -webkit-fill-available !important;
-}
-body.webkit-vh *.maxvh--100, body.webkit-vh .layout-fullscreen > .row {
-  max-height: -webkit-fill-available !important;
-}
-
 body.webkit-vh .layout-fullscreen > .row {
   height: 100vh;
   max-height: -webkit-fill-available !important;
