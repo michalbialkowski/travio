@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <title>travio</title>
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=d41d8cd98f00b204e9800998ecf8427e">
+    <link rel="manifest" href="manifest.json?h=d0defb2741aeb5d99020f9d7a992fa74" crossorigin="use-credentials">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&amp;subset=latin-ext&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/style.compiled.css?h=446a123a6a6535f087aebd7acc17e8ae">
+</head>
+
+<body class="webkit-fill">
+    <div class="body">
+        <header>
+            <section>
+                <nav class="navbar navbar-expand-md bg-body shadow py-3">
+                    <div class="container"><a class="navbar-brand link-success" href="admin-dashboard.html"><svg viewBox="984.788 937.361 253.118 73.419" height="30" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 1005.575 988.458 C 1005.575 992.144 1005.472 998.288 1011.104 998.288 C 1013.869 998.288 1015.61 997.161 1017.555 995.728 L 1017.555 1008.22 C 1015.2 1009.552 1012.333 1010.78 1009.261 1010.78 C 996.256 1010.78 990.42 1005.251 990.42 988.458 L 990.42 971.869 L 984.788 971.869 L 984.788 959.377 L 990.42 959.377 L 990.42 944.836 L 1005.575 944.836 L 1005.575 959.377 L 1017.555 959.377 L 1017.555 971.869 L 1005.575 971.869 L 1005.575 988.458 Z M 1060.296 960.093 L 1058.248 971.46 C 1054.46 969.821 1053.743 970.128 1052.002 970.128 C 1045.858 970.128 1042.274 973.405 1042.274 981.495 L 1042.274 1009.961 L 1027.119 1009.961 L 1027.119 959.377 L 1042.274 959.377 L 1042.274 963.882 C 1044.22 960.401 1049.544 958.66 1052.924 958.66 C 1056.098 958.66 1057.941 958.762 1060.296 960.093 Z M 1073.951 974.327 L 1062.687 967.876 C 1068.319 961.527 1075.897 958.557 1083.781 958.557 C 1098.936 958.557 1105.08 966.852 1105.08 974.634 L 1105.08 1009.961 L 1089.925 1009.961 L 1089.925 1006.377 C 1087.57 1008.835 1083.372 1010.678 1078.661 1010.678 C 1064.838 1010.678 1059.513 1004.534 1059.513 995.113 C 1059.513 984.464 1068.114 977.296 1082.04 977.296 L 1089.925 977.296 C 1089.925 973.507 1087.058 971.05 1082.757 971.05 C 1078.354 971.05 1076.204 971.869 1073.951 974.327 Z M 1089.925 993.27 L 1089.925 988.765 L 1081.016 988.765 C 1077.023 988.765 1074.053 991.53 1074.668 995.421 C 1075.077 998.185 1077.535 999.312 1081.016 999.312 C 1087.672 999.312 1089.925 995.523 1089.925 993.27 Z M 1139.424 1009.961 L 1129.492 1009.961 L 1108.091 959.377 L 1123.757 959.377 L 1134.407 988.253 C 1137.888 979.447 1141.78 967.876 1145.056 959.377 L 1160.621 959.377 L 1139.424 1009.961 Z M 1178.786 959.377 L 1178.786 1009.961 L 1163.631 1009.961 L 1163.631 959.377 L 1178.786 959.377 Z M 1179.196 944.836 C 1179.196 949.137 1175.714 952.516 1171.106 952.516 C 1166.703 952.516 1163.119 949.137 1163.119 944.836 C 1163.119 940.638 1166.703 937.361 1171.106 937.361 C 1175.714 937.361 1179.196 940.638 1179.196 944.836 Z M 1211.18 971.152 C 1204.934 971.152 1199.711 976.682 1199.711 984.771 C 1199.711 992.758 1204.934 998.288 1211.18 998.288 C 1217.528 998.288 1222.751 992.758 1222.751 984.771 C 1222.751 976.682 1217.528 971.152 1211.18 971.152 Z M 1211.18 958.66 C 1226.028 958.66 1237.906 969.821 1237.906 984.771 C 1237.906 999.721 1226.028 1010.78 1211.18 1010.78 C 1196.434 1010.78 1184.556 999.721 1184.556 984.771 C 1184.556 969.821 1196.434 958.66 1211.18 958.66 Z" fill="currentColor"/>
+</svg></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navcol-2">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a class="nav-link" href="admin-backups.html">Kopie zapasowe</a></li>
+                                <li class="nav-item"><a class="nav-link" href="admin-cicd.html">CI/CD</a></li>
+                            </ul><button class="btn btn-warning btn-sm ms-auto" type="button">Wyloguj się</button>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main>
+            <section class="py-5">
+                <div class="container">
+                    <div class="row gx-0 gy-4 flex-column">
+                        <div class="col">
+                            <h1 class="border-secondary-subtle mb-0 pb-3 border-bottom">CI/CD</h1>
+                        </div>
+                        <div class="col">
+                            <div class="btn-toolbar justify-content-end gap-2">
+                                <div class="btn-group btn-group-sm" role="group"><button class="btn btn-primary text-start d-flex align-items-center gap-2 py-1" type="button"><span class="fs-5 d-block"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-square-rounded-chevrons-right-filled">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M12 2c-.218 0 -.432 .002 -.642 .005l-.616 .017l-.299 .013l-.579 .034l-.553 .046c-4.785 .464 -6.732 2.411 -7.196 7.196l-.046 .553l-.034 .579c-.005 .098 -.01 .198 -.013 .299l-.017 .616l-.004 .318l-.001 .324c0 .218 .002 .432 .005 .642l.017 .616l.013 .299l.034 .579l.046 .553c.464 4.785 2.411 6.732 7.196 7.196l.553 .046l.579 .034c.098 .005 .198 .01 .299 .013l.616 .017l.642 .005l.642 -.005l.616 -.017l.299 -.013l.579 -.034l.553 -.046c4.785 -.464 6.732 -2.411 7.196 -7.196l.046 -.553l.034 -.579c.005 -.098 .01 -.198 .013 -.299l.017 -.616l.005 -.642l-.005 -.642l-.017 -.616l-.013 -.299l-.034 -.579l-.046 -.553c-.464 -4.785 -2.411 -6.732 -7.196 -7.196l-.553 -.046l-.579 -.034a28.058 28.058 0 0 0 -.299 -.013l-.616 -.017l-.318 -.004l-.324 -.001zm-3.707 6.293a1 1 0 0 1 1.32 -.083l.094 .083l3 3a1 1 0 0 1 .083 1.32l-.083 .094l-3 3a1 1 0 0 1 -1.497 -1.32l.083 -.094l2.292 -2.293l-2.292 -2.293a1 1 0 0 1 -.083 -1.32l.083 -.094zm4 0a1 1 0 0 1 1.32 -.083l.094 .083l3 3a1 1 0 0 1 .083 1.32l-.083 .094l-3 3a1 1 0 0 1 -1.497 -1.32l.083 -.094l2.292 -2.293l-2.292 -2.293a1 1 0 0 1 -.083 -1.32l.083 -.094z" fill="currentColor" stroke-width="0"></path>
+                                            </svg></span><span class="d-block"><span class="d-block">Synchronizuj</span><small class="d-block">test.travio.app</small></span></button><button class="btn btn-primary text-start d-flex align-items-center gap-2 py-1" type="button"><span class="fs-5 d-block"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-square-rounded-chevrons-right-filled">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M12 2c-.218 0 -.432 .002 -.642 .005l-.616 .017l-.299 .013l-.579 .034l-.553 .046c-4.785 .464 -6.732 2.411 -7.196 7.196l-.046 .553l-.034 .579c-.005 .098 -.01 .198 -.013 .299l-.017 .616l-.004 .318l-.001 .324c0 .218 .002 .432 .005 .642l.017 .616l.013 .299l.034 .579l.046 .553c.464 4.785 2.411 6.732 7.196 7.196l.553 .046l.579 .034c.098 .005 .198 .01 .299 .013l.616 .017l.642 .005l.642 -.005l.616 -.017l.299 -.013l.579 -.034l.553 -.046c4.785 -.464 6.732 -2.411 7.196 -7.196l.046 -.553l.034 -.579c.005 -.098 .01 -.198 .013 -.299l.017 -.616l.005 -.642l-.005 -.642l-.017 -.616l-.013 -.299l-.034 -.579l-.046 -.553c-.464 -4.785 -2.411 -6.732 -7.196 -7.196l-.553 -.046l-.579 -.034a28.058 28.058 0 0 0 -.299 -.013l-.616 -.017l-.318 -.004l-.324 -.001zm-3.707 6.293a1 1 0 0 1 1.32 -.083l.094 .083l3 3a1 1 0 0 1 .083 1.32l-.083 .094l-3 3a1 1 0 0 1 -1.497 -1.32l.083 -.094l2.292 -2.293l-2.292 -2.293a1 1 0 0 1 -.083 -1.32l.083 -.094zm4 0a1 1 0 0 1 1.32 -.083l.094 .083l3 3a1 1 0 0 1 .083 1.32l-.083 .094l-3 3a1 1 0 0 1 -1.497 -1.32l.083 -.094l2.292 -2.293l-2.292 -2.293a1 1 0 0 1 -.083 -1.32l.083 -.094z" fill="currentColor" stroke-width="0"></path>
+                                            </svg></span><span class="d-block"><span class="d-block">Synchronizuj</span><small class="d-block">dev.travio.app</small></span></button></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row gx-0 gy-4 flex-column">
+                                <div class="col">
+                                    <div class="card shadow-sm border-0">
+                                        <div class="table-responsive">
+                                            <table class="table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Kopia zapasowa</th>
+                                                        <th>Host</th>
+                                                        <th>Wykonano</th>
+                                                        <th class="text-end">Akcje</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="align-middle">
+                                                    <tr>
+                                                        <th>Synchronizacja test.travio.app z dnia 01.04.2002</th>
+                                                        <td>test.travio.app</td>
+                                                        <td>2024-03-03<br>11:23:15</td>
+                                                        <td>
+                                                            <div class="d-flex justify-content-end"><button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_1">Opcje</button></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="p-0 border-0" colspan="99">
+                                                            <div id="collapse_1" class="collapse">
+                                                                <div class="btn-toolbar bg-secondary-subtle justify-content-end p-3 gap-2 border-top">
+                                                                    <div class="btn-group btn-group-sm" role="group"><button class="btn btn-info text-start d-flex align-items-center gap-2 py-1" type="button"><span class="fs-5 d-block"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-search">
+                                                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                                                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+                                                                                    <path d="M21 21l-6 -6"></path>
+                                                                                </svg></span><span class="d-block"><span class="d-block">Szczegóły</span></span></button></div>
+                                                                    <div class="btn-group btn-group-sm" role="group"><button class="btn btn-danger text-start d-flex align-items-center gap-2 py-1" type="button"><span class="fs-5 d-block"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-trash">
+                                                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                                                    <path d="M4 7l16 0"></path>
+                                                                                    <path d="M10 11l0 6"></path>
+                                                                                    <path d="M14 11l0 6"></path>
+                                                                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                                                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                                                                </svg></span><span class="d-block"><span class="d-block">Usuń</span></span></button></div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Synchronizacja test.travio.app z dnia 01.04.2002</th>
+                                                        <td>test.travio.app</td>
+                                                        <td>2024-03-03<br>11:23:15</td>
+                                                        <td>
+                                                            <div class="d-flex justify-content-end"><button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_1">Opcje</button></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Synchronizacja test.travio.app z dnia 01.04.2002</th>
+                                                        <td>test.travio.app</td>
+                                                        <td>2024-03-03<br>11:23:15</td>
+                                                        <td>
+                                                            <div class="d-flex justify-content-end"><button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_1">Opcje</button></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Synchronizacja test.travio.app z dnia 01.04.2002</th>
+                                                        <td>test.travio.app</td>
+                                                        <td>2024-03-03<br>11:23:15</td>
+                                                        <td>
+                                                            <div class="d-flex justify-content-end"><button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_1">Opcje</button></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <nav class="fw-semibold d-flex justify-content-end">
+                                        <ul class="pagination mb-0">
+                                            <li class="page-item"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="assets/js/jquery.min.js?h=6bcc3684f18aa21874fa709f122723cf"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js?h=e55bde7d6e36ebf17ba0b8c1e80e4065"></script>
+    <script src="assets/js/bs-init.js?h=af61fb61b6a88cec646e9c8db02523c0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="assets/js/libs/core/flickity.pkgd.min.js?h=8625a9d2a4f797e756dbd299c2d74fc2"></script>
+    <script src="assets/js/libs/core/masonry.pkgd.js?h=c39480835cf00844e6407f24d8aaba2e"></script>
+    <script src="assets/js/bootstrap/triggers/tooltip.js?h=e5075143aa50a1419d3ea6207a6c1527"></script>
+    <script src="assets/js/bootstrap/triggers/toast.js?h=e07263fb4f941bfa587963c59c9b4251"></script>
+    <script src="assets/js/bootstrap/triggers/popover.js?h=3459a77be6da343bd1d4b48a1f24e510"></script>
+    <script src="assets/js/libs/triggers/flickity.js?h=4f2bd3dd70788aeb4da168eca3bda175"></script>
+    <script src="assets/js/libs/triggers/masonry.js?h=eba9bf4e2d9c7c9794b7bf1e788e5932"></script>
+    <script src="assets/js/custom/ux.js?h=5e9812be8fb3e1f6b31fe9a15c4cfaef"></script>
+</body>
+
+</html>
