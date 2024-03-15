@@ -1279,6 +1279,11 @@ progress {
   width: 16.66666667%;
 }
 
+.row-cols-7 > * {
+  flex: 0 0 auto;
+  width: 14.28571429%;
+}
+
 .col-auto, .card.card-pill > .card-body > .row > .col + .col, .card .card-header-navbar > .row > .col + .col,
 .card .card-footer-navbar > .row > .col + .col {
   flex: 0 0 auto;
@@ -1483,6 +1488,10 @@ progress {
     flex: 0 0 auto;
     width: 16.66666667%;
   }
+  .row-cols-sm-7 > * {
+    flex: 0 0 auto;
+    width: 14.28571429%;
+  }
   .col-sm-auto {
     flex: 0 0 auto;
     width: auto;
@@ -1651,6 +1660,10 @@ progress {
   .row-cols-md-6 > * {
     flex: 0 0 auto;
     width: 16.66666667%;
+  }
+  .row-cols-md-7 > * {
+    flex: 0 0 auto;
+    width: 14.28571429%;
   }
   .col-md-auto {
     flex: 0 0 auto;
@@ -1821,6 +1834,10 @@ progress {
     flex: 0 0 auto;
     width: 16.66666667%;
   }
+  .row-cols-lg-7 > * {
+    flex: 0 0 auto;
+    width: 14.28571429%;
+  }
   .col-lg-auto {
     flex: 0 0 auto;
     width: auto;
@@ -1990,6 +2007,10 @@ progress {
     flex: 0 0 auto;
     width: 16.66666667%;
   }
+  .row-cols-xl-7 > * {
+    flex: 0 0 auto;
+    width: 14.28571429%;
+  }
   .col-xl-auto {
     flex: 0 0 auto;
     width: auto;
@@ -2158,6 +2179,10 @@ progress {
   .row-cols-xxl-6 > * {
     flex: 0 0 auto;
     width: 16.66666667%;
+  }
+  .row-cols-xxl-7 > * {
+    flex: 0 0 auto;
+    width: 14.28571429%;
   }
   .col-xxl-auto {
     flex: 0 0 auto;

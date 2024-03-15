@@ -150,39 +150,442 @@
             </section>
         </header>
         <main>
-            <section class="text-white bg-info pt-5 pb-3">
+            <section class="text-white bg-primary pt-5 pb-3">
                 <div class="container">
-                    <h1 class="mb-0">Zaimportuj trasę</h1>
+                    <h1 class="mb-0">Plany</h1>
                 </div>
             </section>
             <section class="py-5">
                 <div class="container">
                     <div class="row gy-5">
                         <div class="col-12 col-lg-8">
-                            <div class="card shadow-sm card-bar card-bar-info">
-                                <div class="card-body p-3 p-sm-4">
-                                    <div class="row gx-0 gy-4 flex-column">
-                                        <div class="col">
-                                            <h3>Zaimportuj plik GPX</h3>
-                                            <p class="mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            <div class="row gy-4 row-cols-1 row-cols-md-2 justify-content-center">
+                                <div class="col d-flex">
+                                    <div class="card shadow-sm flex-grow-1 card-bar card-bar-success card-bar-sm">
+                                        <div class="card-body p-3 p-sm-4">
+                                            <h3 class="card-title">Tourist</h3>
+                                            <p class="card-text mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
                                         </div>
-                                        <div class="col">
-                                            <form>
-                                                <div class="row gx-0 gy-4 flex-column">
-                                                    <div class="col">
-                                                        <div class="form-floating"><input class="form-control" type="text" id="form_input_1"><label class="form-label" for="form_input_1">Nazwa trasy</label></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="input-group"><span class="d-none d-sm-grid input-group-text">Plik GPX</span><input class="form-control" type="file"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-floating"><textarea class="form-control" rows="4"></textarea><label class="form-label">Krótki opis</label></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="d-flex justify-content-start"><a class="btn btn-primary" role="button" href="#!">Import</a></div>
+                                        <div>
+                                            <table class="table mb-0">
+                                                <tbody class="align-middle">
+                                                    <tr>
+                                                        <td>Startowy pakiet wypraw</td>
+                                                        <td class="fw-bold text-end">3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Wyprawy dostępne cyklicznie</td>
+                                                        <td class="fw-bold text-end">2 co miesiąc</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Trasy na wyprawę</td>
+                                                        <td class="fw-bold text-end">1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Galerie na wyprawę</td>
+                                                        <td class="fw-bold text-end">3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Zdjęcia na wyprawę</td>
+                                                        <td class="fw-bold text-end">25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jakość zdjęć</td>
+                                                        <td class="fw-bold text-end">960 px</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="bg-success-subtle p-2">
+                                            <div class="row gx-0 flex-column">
+                                                <div class="col">
+                                                    <div class="table-responsive mx-n2">
+                                                        <table class="table table-borderless mb-0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="bg-transparent">Rozliczenie</td>
+                                                                    <td class="fw-bold text-end bg-transparent">Miesięczne</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="bg-transparent">Cena</td>
+                                                                    <td class="text-end bg-transparent"><span class="fw-bold d-block">Darmowy</span><small class="d-block bg-transparent">bez limitu czasu</small></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
-                                            </form>
+                                                <div class="col">
+                                                    <div class="mx-n2 mb-n2"><button class="btn btn-success d-block rounded-0 w-100" type="button">Subscribe</button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="card shadow-sm flex-grow-1 card-bar card-bar-info card-bar-sm">
+                                        <div class="card-body p-3 p-sm-4">
+                                            <h3 class="card-title">Voyager</h3>
+                                            <p class="card-text mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                        </div>
+                                        <div>
+                                            <table class="table mb-0">
+                                                <tbody class="align-middle">
+                                                    <tr>
+                                                        <td>Startowy pakiet wypraw</td>
+                                                        <td class="fw-bold text-end">5</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Wyprawy dostępne cyklicznie</td>
+                                                        <td class="fw-bold text-end">4 co miesiąc</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Trasy na wyprawę</td>
+                                                        <td class="fw-bold text-end">3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Galerie na wyprawę</td>
+                                                        <td class="fw-bold text-end">7</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Zdjęcia na wyprawę</td>
+                                                        <td class="fw-bold text-end">50</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jakość zdjęć</td>
+                                                        <td class="fw-bold text-end">1280 px</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="bg-info-subtle">
+                                            <ul class="nav nav-tabs nav-fill bg-transparent rounded-0 py-2 px-1" role="tablist">
+                                                <li class="nav-item" role="presentation"><a class="nav-link active fw-semibold" role="tab" data-bs-toggle="tab" href="#tab-3">Miesięczny</a></li>
+                                                <li class="nav-item" role="presentation"><a class="nav-link fw-semibold" role="tab" data-bs-toggle="tab" href="#tab-4">Roczny</a></li>
+                                            </ul>
+                                            <div class="tab-content p-2">
+                                                <div class="tab-pane active" role="tabpanel" id="tab-3">
+                                                    <div class="row gx-0 flex-column">
+                                                        <div class="col">
+                                                            <div class="table-responsive mx-n2">
+                                                                <table class="table table-borderless mb-0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Rozliczenie</td>
+                                                                            <td class="fw-bold text-end bg-transparent">Miesięczne</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Cena</td>
+                                                                            <td class="text-end bg-transparent"><span class="fw-bold d-block">2 EUR</span><small class="d-block bg-transparent">na miesiąc</small></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="mx-n2 mb-n2"><button class="btn btn-secondary d-block rounded-0 w-100" type="button"><small class="text-uppercase fw-normal d-block fs--xsmall">Your current Plan</small><span class="d-block">Cancel Subscription</span></button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" role="tabpanel" id="tab-4">
+                                                    <div class="row gx-0 flex-column">
+                                                        <div class="col">
+                                                            <div class="table-responsive mx-n2">
+                                                                <table class="table table-borderless mb-0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Rozliczenie</td>
+                                                                            <td class="fw-bold text-end bg-transparent">Roczne</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Cena</td>
+                                                                            <td class="text-end bg-transparent"><span class="fw-bold d-block">20 EUR</span><small class="d-block bg-transparent">na rok</small></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="mx-n2 mb-n2"><button class="btn btn-info d-block rounded-0 w-100" type="button">Subscribe</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="card shadow-sm flex-grow-1 card-bar card-bar-warning card-bar-sm">
+                                        <div class="card-body p-3 p-sm-4">
+                                            <h3 class="card-title">Explorer</h3>
+                                            <p class="card-text mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                        </div>
+                                        <div>
+                                            <table class="table mb-0">
+                                                <tbody class="align-middle">
+                                                    <tr>
+                                                        <td>Startowy pakiet wypraw</td>
+                                                        <td class="fw-bold text-end">10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Wyprawy dostępne cyklicznie</td>
+                                                        <td class="fw-bold text-end">7 co miesiąc</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Trasy na wyprawę</td>
+                                                        <td class="fw-bold text-end">5</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Galerie na wyprawę</td>
+                                                        <td class="fw-bold text-end">15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Zdjęcia na wyprawę</td>
+                                                        <td class="fw-bold text-end">100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jakość zdjęć</td>
+                                                        <td class="fw-bold text-end">1920 px</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="bg-warning-subtle">
+                                            <ul class="nav nav-tabs nav-fill bg-transparent rounded-0 py-2 px-1" role="tablist">
+                                                <li class="nav-item" role="presentation"><a class="nav-link active fw-semibold" role="tab" data-bs-toggle="tab" href="#tab-5">Miesięczny</a></li>
+                                                <li class="nav-item" role="presentation"><a class="nav-link fw-semibold" role="tab" data-bs-toggle="tab" href="#tab-6">Roczny</a></li>
+                                            </ul>
+                                            <div class="tab-content p-2">
+                                                <div class="tab-pane active" role="tabpanel" id="tab-5">
+                                                    <div class="row gx-0 flex-column">
+                                                        <div class="col">
+                                                            <div class="table-responsive mx-n2">
+                                                                <table class="table table-borderless mb-0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Rozliczenie</td>
+                                                                            <td class="fw-bold text-end bg-transparent">Miesięczne</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Cena</td>
+                                                                            <td class="text-end bg-transparent"><span class="fw-bold d-block">3 EUR</span><small class="d-block bg-transparent">na miesiąc</small></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="mx-n2 mb-n2"><button class="btn btn-warning d-block rounded-0 w-100" type="button">Subscribe</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" role="tabpanel" id="tab-6">
+                                                    <div class="row gx-0 gy-3 flex-column">
+                                                        <div class="col">
+                                                            <div class="table-responsive m-n2">
+                                                                <table class="table table-borderless mb-0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Rozliczenie</td>
+                                                                            <td class="fw-bold text-end bg-transparent">Roczne</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Cena</td>
+                                                                            <td class="text-end bg-transparent"><span class="fw-bold d-block">30 EUR</span><small class="d-block bg-transparent">na rok</small></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="mx-n2 mb-n2"><button class="btn btn-warning d-block rounded-0 w-100" type="button">Subscribe</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="card shadow-sm flex-grow-1 card-bar card-bar-primary card-bar-sm">
+                                        <div class="card-body p-3 p-sm-4">
+                                            <h3 class="card-title">Odyssey</h3>
+                                            <p class="card-text mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                        </div>
+                                        <div>
+                                            <table class="table mb-0">
+                                                <tbody class="align-middle">
+                                                    <tr>
+                                                        <td>Startowy pakiet wypraw</td>
+                                                        <td class="fw-bold text-end">15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Wyprawy dostępne cyklicznie</td>
+                                                        <td class="fw-bold text-end">10 co miesiąc</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Trasy na wyprawę</td>
+                                                        <td class="fw-bold text-end">10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Galerie na wyprawę</td>
+                                                        <td class="fw-bold text-end">20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Zdjęcia na wyprawę</td>
+                                                        <td class="fw-bold text-end">150</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jakość zdjęć</td>
+                                                        <td class="fw-bold text-end">2560 px</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="bg-primary-subtle">
+                                            <ul class="nav nav-tabs nav-fill bg-transparent rounded-0 py-2 px-1" role="tablist">
+                                                <li class="nav-item" role="presentation"><a class="nav-link active fw-semibold" role="tab" data-bs-toggle="tab" href="#tab-7">Miesięczny</a></li>
+                                                <li class="nav-item" role="presentation"><a class="nav-link fw-semibold" role="tab" data-bs-toggle="tab" href="#tab-8">Roczny</a></li>
+                                            </ul>
+                                            <div class="tab-content p-2">
+                                                <div class="tab-pane active" role="tabpanel" id="tab-7">
+                                                    <div class="row gx-0 flex-column">
+                                                        <div class="col">
+                                                            <div class="table-responsive mx-n2">
+                                                                <table class="table table-borderless mb-0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Rozliczenie</td>
+                                                                            <td class="fw-bold text-end bg-transparent">Miesięczne</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Cena</td>
+                                                                            <td class="text-end bg-transparent"><span class="fw-bold d-block">3 EUR</span><small class="d-block bg-transparent">na miesiąc</small></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="mx-n2 mb-n2"><button class="btn btn-primary d-block rounded-0 w-100" type="button">Subscribe</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" role="tabpanel" id="tab-8">
+                                                    <div class="row gx-0 gy-3 flex-column">
+                                                        <div class="col">
+                                                            <div class="table-responsive m-n2">
+                                                                <table class="table table-borderless mb-0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Rozliczenie</td>
+                                                                            <td class="fw-bold text-end bg-transparent">Roczne</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Cena</td>
+                                                                            <td class="text-end bg-transparent"><span class="fw-bold d-block">30 EUR</span><small class="d-block bg-transparent">na rok</small></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="mx-n2 mb-n2"><button class="btn btn-primary d-block rounded-0 w-100" type="button">Subscribe</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="card shadow-sm flex-grow-1 card-bar card-bar-danger card-bar-sm">
+                                        <div class="card-body p-3 p-sm-4">
+                                            <h3 class="card-title">Epic</h3>
+                                            <p class="card-text mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                        </div>
+                                        <div>
+                                            <table class="table mb-0">
+                                                <tbody class="align-middle">
+                                                    <tr>
+                                                        <td>Startowy pakiet wypraw</td>
+                                                        <td class="fw-bold text-end">25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Wyprawy dostępne cyklicznie</td>
+                                                        <td class="fw-bold text-end">15 co miesiąc</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Trasy na wyprawę</td>
+                                                        <td class="fw-bold text-end">15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Galerie na wyprawę</td>
+                                                        <td class="fw-bold text-end">25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Zdjęcia na wyprawę</td>
+                                                        <td class="fw-bold text-end">200</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jakość zdjęć</td>
+                                                        <td class="fw-bold text-end">3000 px</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="bg-danger-subtle">
+                                            <ul class="nav nav-tabs nav-fill bg-transparent rounded-0 py-2 px-1" role="tablist">
+                                                <li class="nav-item" role="presentation"><a class="nav-link active fw-semibold" role="tab" data-bs-toggle="tab" href="#tab-9">Miesięczny</a></li>
+                                                <li class="nav-item" role="presentation"><a class="nav-link fw-semibold" role="tab" data-bs-toggle="tab" href="#tab-10">Roczny</a></li>
+                                            </ul>
+                                            <div class="tab-content p-2">
+                                                <div class="tab-pane active" role="tabpanel" id="tab-9">
+                                                    <div class="row gx-0 flex-column">
+                                                        <div class="col">
+                                                            <div class="table-responsive mx-n2">
+                                                                <table class="table table-borderless mb-0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Rozliczenie</td>
+                                                                            <td class="fw-bold text-end bg-transparent">Miesięczne</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Cena</td>
+                                                                            <td class="text-end bg-transparent"><span class="fw-bold d-block">3 EUR</span><small class="d-block bg-transparent">na miesiąc</small></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="mx-n2 mb-n2"><button class="btn btn-danger d-block rounded-0 w-100" type="button">Subscribe</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" role="tabpanel" id="tab-10">
+                                                    <div class="row gx-0 gy-3 flex-column">
+                                                        <div class="col">
+                                                            <div class="table-responsive m-n2">
+                                                                <table class="table table-borderless mb-0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Rozliczenie</td>
+                                                                            <td class="fw-bold text-end bg-transparent">Roczne</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="bg-transparent">Cena</td>
+                                                                            <td class="text-end bg-transparent"><span class="fw-bold d-block">30 EUR</span><small class="d-block bg-transparent">na rok</small></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="mx-n2 mb-n2"><button class="btn btn-danger d-block rounded-0 w-100" type="button">Subscribe</button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
