@@ -9866,7 +9866,7 @@ textarea.form-control-lg {
   z-index: 0 !important;
 }
 
-.z-1, body.webkit-fill > .body > main {
+.z-1 {
   z-index: 1 !important;
 }
 
